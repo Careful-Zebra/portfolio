@@ -25,4 +25,4 @@ dist-ssr
 *.sw?
 
 #just for my own reasons
-./CLAUDE.md
+/CLAUDE.md
