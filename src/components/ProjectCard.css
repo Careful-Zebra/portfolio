@@ -7,3 +7,9 @@
     border-radius: 8px;
     padding: 20px;
 }
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--border);
+  border-radius: 8px;   
+}
