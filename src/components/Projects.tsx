@@ -38,7 +38,7 @@ export default function Projects({ selected, onSelect }: ProjectsProps) {
                 Stack: Django, PostgreSQL, Heroku`}
                 repoURL='https://github.com/Careful-Zebra/crossword_creator' 
                 liveURL='https://guarded-harbor-66706-11d0f678019c.herokuapp.com/'
-                imageURL='/croscreator.png'
+                embedURL='https://guarded-harbor-66706-11d0f678019c.herokuapp.com'
             />}
 
             {activeProject === 'ovrdle' && <ProjectCard 
