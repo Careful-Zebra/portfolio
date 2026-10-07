@@ -50,6 +50,7 @@ export default function Projects({ selected, onSelect }: ProjectsProps) {
                 Stack: JavaScript, HTML, CSS, Node.js, AWS Amplify, Route 53`}
                 liveURL='https://ovrdle.com'
                 embedURL='https://ovrdle.com'
+                repoURL='https://github.com/Careful-Zebra/ovrdle'
             />}
 
             {activeProject === 'ranker' && <ProjectCard 
@@ -59,6 +60,7 @@ export default function Projects({ selected, onSelect }: ProjectsProps) {
                 Stack: React 18, Vite, React Router, lz-string, AWS Amplify with CI/CD from GitHub`}
                 liveURL='https://main.dos1qc9suga1q.amplifyapp.com/#/' 
                 embedURL='https://main.dos1qc9suga1q.amplifyapp.com/#/'
+                repoURL='https://github.com/Careful-Zebra/Ranker/'
             />}
 
             {activeProject === 'shift-manager' && <ProjectCard 
