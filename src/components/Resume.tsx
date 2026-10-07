@@ -1,11 +1,12 @@
+import './Resume.css'
+
 export default function Resume() {
 
     return(
         <>
-            <iframe src="/resume.pdf" width="100%" height="800px" title="Viktor Mooren resume" />
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
-            <p>In my four years at UC Berkeley, I learned a lot about Computer Science, and a lot about myself. My time spent teaching <a href="https://www.gamedesigndecal.com/" target="_blank" rel="noopener noreferrer">Game Design</a> got me familiar with Unity and various programming concepts, while also letting me learn how to communicate effectively and present myself. My time at the UC Berkeley Student Union taught me how to lead a large team, think on my feet, and also gave me the space to work on software projects in a more professional space that had real measurable quality-of-life improvement outcomes for our workforce, including my Shift Manager project. I'm excited to jump into the workforce, and would love to get a chance to prove my usefulness for your company.</p>
+            <p>I'm a software engineer and recent UC Berkeley graduate (B.A. Computer Science, minor in Philosophy, 2026). I like building tools that people actually use: a daily football guessing game live at ovrdle.com, a ranking app that fits an entire ranking into a shareable link, and a shift scheduler that cut schedule-building time by a third for my team at the Student Union. Along the way I taught Unity in Berkeley's Game Design DeCal and led a large student staff at the Student Union, which taught me as much about communication as about code. I'm looking for a full-time software engineering role where I can ship things that matter to real users, and write code that puts a smile on people's faces.</p>
+            <iframe className="resume-frame" src="/resume.pdf" width="100%" height="800px" title="Viktor Mooren resume" />
+            <a className="resume-download" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
         </>
-        
     )
 }

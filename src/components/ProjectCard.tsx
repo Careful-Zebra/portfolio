@@ -25,6 +25,7 @@ export default function ProjectCard({ title, description, liveURL, repoURL, embe
                     width="100%"
                     height="650px"
                     title={`${title} live demo`}
+                    loading="lazy"
                 />
             )}
             {imageURL && (

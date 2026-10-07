@@ -1,0 +1,21 @@
+@media (width <= 768px) {
+    .resume-frame {
+        display: none;
+    }
+    .resume-download {
+        display: inline-block;
+        padding: 10px 16px;
+        border: 2px solid var(--border);
+        border-radius: 8px;
+    }
+}@media (width <= 768px) {
+    .resume-frame {
+        display: none;
+    }
+    .resume-download {
+        display: inline-block;
+        padding: 10px 16px;
+        border: 2px solid var(--border);
+        border-radius: 8px;
+    }
+}

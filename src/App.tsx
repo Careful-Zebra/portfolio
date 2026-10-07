@@ -1,21 +1,20 @@
 import Hero from './components/Hero.tsx'
 import './App.css'
-import Contact from './components/Contact.tsx'
 import Resume from './components/Resume.tsx'
 import Projects from './components/Projects.tsx'
-import { useState, type CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
+import { useHashRoute } from './hooks/useHashRoute.ts'
 
 function App() {
 
-    const [activeTab, setActiveTab] = useState('resume')
+    const { segments, navigate } = useHashRoute()
     const tabs = [
-        {id: 'resume', label:'Resume'}, 
-        {id: 'contact', label: 'Contact'}, 
+        {id: 'about', label: 'About'},
         {id: 'projects', label: 'Projects'}
     ]
+    const activeTab = tabs.find(t => t.id === segments[0])?.id ?? 'about'
     const activeIndex = tabs.findIndex(t => t.id === activeTab)
 
-    
   return (
       <>
           <Hero />
@@ -24,19 +23,21 @@ function App() {
                 <button
                     key={tab.id}
                     className={activeTab === tab.id ? 'active' : ''}
-                    onClick={() => setActiveTab(tab.id)}
+                    onClick={() => navigate(tab.id)}
                 >
                     {tab.label}
                 </button>
             ))}
           </nav>
-          
-          {activeTab === 'resume' && <Resume />}
 
-          {activeTab === 'projects' && <Projects />}
+          {activeTab === 'about' && <Resume />}
 
-          {activeTab === 'contact' && <Contact />}
-      
+          {activeTab === 'projects' && (
+              <Projects
+                  selected={segments[1]}
+                  onSelect={(id) => navigate('projects', id)}
+              />
+          )}
     </>
   )
 }

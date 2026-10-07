@@ -4,8 +4,12 @@ export default function Hero() {
     return(
         <section className="hero">
             <h1>Viktor Mooren</h1>
-            <p>Multidisciplinary Software Engineer | UC Berkeley CS & Philosophy Graduate | <a href="mailto:viktorm@berkeley.edu">viktorm@berkeley.edu</a></p>
+            <p>Multidisciplinary Software Engineer | UC Berkeley CS Graduate</p>
+            <p>
+                <a href="mailto:viktorm@berkeley.edu">Email</a> ·{' '}
+                <a href="https://github.com/Careful-Zebra" target="_blank" rel="noopener noreferrer">GitHub</a> ·{' '}
+                <a href="https://www.linkedin.com/in/viktor-mooren/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
         </section>
-        
     )
 }

@@ -13,3 +13,6 @@
   border: 2px solid var(--border);
   border-radius: 8px;   
 }
+.project-card p {
+  white-space: pre-line;
+}
