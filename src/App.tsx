@@ -3,7 +3,7 @@ import './App.css'
 import Contact from './components/Contact.tsx'
 import Resume from './components/Resume.tsx'
 import Projects from './components/Projects.tsx'
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 
 function App() {
 
@@ -13,12 +13,13 @@ function App() {
         {id: 'contact', label: 'Contact'}, 
         {id: 'projects', label: 'Projects'}
     ]
+    const activeIndex = tabs.findIndex(t => t.id === activeTab)
 
     
   return (
       <>
           <Hero />
-          <nav className="tabs">
+          <nav className="tabs" style={{ '--active-index': activeIndex, '--tab-count': tabs.length } as CSSProperties}>
             {tabs.map((tab) => (
                 <button
                     key={tab.id}

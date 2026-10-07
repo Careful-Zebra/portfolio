@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import ProjectCard from './ProjectCard.tsx'
 
 export default function Projects() {
@@ -6,12 +6,14 @@ export default function Projects() {
     const [activeProject, setActiveProject] = useState('crossword')
     const tabs = [
         {id: 'crossword', label: 'Crossword Creator'}, 
-        {id: 'ranker', label: 'Ranker'}
+        {id: 'ranker', label: 'Ranker'},
+        {id: 'ovrdle', label: 'OVRdle'}
     ]
+    const activeIndex = tabs.findIndex(t => t.id === activeProject)
 
     return(
         <>
-            <nav className="tabs">
+            <nav className="tabs" style={{ '--active-index': activeIndex, '--tab-count': tabs.length } as CSSProperties}>
             {tabs.map((tab) => (
                 <button
                     key={tab.id}
@@ -29,6 +31,13 @@ export default function Projects() {
                 repoURL='https://github.com/Careful-Zebra/crossword_creator' 
                 liveURL='https://guarded-harbor-66706-11d0f678019c.herokuapp.com/'
                 imageURL='/croscreator.png'
+            />}
+
+            {activeProject === 'ovrdle' && <ProjectCard 
+                title="OVRdle" 
+                description='A daily football guessing game. Each day, OVRdle shows five footballers, one from each of the last five EAFC games. Players guess their overall rating in that edition, with three tries per player and a practice mode lets players play unlimited rounds. A spoiler free emoji grid allows players to share results easily. The game was built with vanilla JavaScript, HTML, and CSS. Node.js scripts handle data validation and photo sourcing. The app is hosted on AWS Amplify with the domain sourced through Route 53.'
+                liveURL='https://ovrdle.com'
+                embedURL='https://ovrdle.com'
             />}
 
             {activeProject === 'ranker' && <ProjectCard 
