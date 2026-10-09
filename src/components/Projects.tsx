@@ -12,7 +12,8 @@ export default function Projects({ selected, onSelect }: ProjectsProps) {
         {id: 'ovrdle', label: 'OVRdle'},
         {id: 'shift-manager', label: 'Shift Manager'},
         {id: 'crossword', label: 'Crossword Creator'},
-        {id: 'ranker', label: 'Ranker'}
+        {id: 'ranker', label: 'Ranker'},
+        {id: 'tennis_scorer', label: 'Tennis Scorer'}
     ]
     const activeProject = tabs.find(t => t.id === selected)?.id ?? tabs[0].id
     const activeIndex = tabs.findIndex(t => t.id === activeProject)
@@ -70,6 +71,18 @@ export default function Projects({ selected, onSelect }: ProjectsProps) {
                 Because it handles sensitive staff data, the code and a live demo can't be public.
 
                 Stack: Python, Django, Heroku`}
+                
+            />}
+
+            {activeProject === 'tennis_scorer' && <ProjectCard 
+                title="Tennis Scorer" 
+                description={`A tennis scorekeeping app for Wear OS smartwatches. Tapping the left or right half of the round screen gives that player a point, and the app follows the full scoring rules: 15-30-40, deuce and advantage, sets won by two clear games, a tiebreak at 6-6, and a best-of-three match. Colored half-circle outlines mark the two tap zones, and undo steps back one point at a time, with a quick color wash across the screen to confirm it worked.
+
+                I built it in Kotlin with Jetpack Compose for Wear OS. The scoring rules live in their own pure Kotlin module, separate from the UI, which saves every point as an immutable snapshot of the match. That makes undo exact across games and sets and lets the logic be unit-tested with JUnit. The app ships as a signed APK on GitHub Releases that installs directly onto a watch.
+
+                Stack: Kotlin, Jetpack Compose, Wear OS, JUnit, Gradle, GitHub Releases`}
+                repoURL='https://github.com/Careful-Zebra/Tennis_Score'
+                imageURL='/tennis_scorer.png'
                 
             />}
 
